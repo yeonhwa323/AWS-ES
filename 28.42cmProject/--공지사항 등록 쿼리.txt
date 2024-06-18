@@ -1,0 +1,170 @@
+--공지사항 등록 쿼리
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div id="content">
+	<h2>공지사항</h2>
+	<h3 class="hidden">방문페이지위치</h3>
+	<ul id="breadscrumb" class="block_hlist">
+		<li>HOME</li>
+		<li>고객센터</li>
+		<li>공지사항등록</li>
+	</ul>
+	<!-- 
+	스프링 시큐리티와 
+	enctype="multipart/form-data" 
+	설정한 경우에는 토큰 처리 방법이 다르다
+	 -->
+	<!-- <form action="" method="post" enctype="multipart/form-data"> -->
+	<form action="/customer/noticeReg.htm?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+		<div id="notice-article-detail" class="article-detail margin-large">
+			<dl class="article-detail-row">
+				<dt class="article-detail-title">제목</dt>
+				<dd class="article-detail-data">
+					&nbsp;<input name="title" />
+				</dd>
+			</dl>
+
+			<dl class="article-detail-row">
+				<dt class="article-detail-title">첨부파일</dt>
+				<dd class="article-detail-data">
+					&nbsp;<input type="file" id="txtFile" name="file" />
+				</dd>
+			</dl>
+
+			<div class="article-content">
+				<textarea id="txtContent" class="txtContent" name="content"></textarea>
+			</div>
+
+		</div>
+		<p class="article-comment margin-small">
+			<input class="btn-save button" type="submit" value="저장" /> <a
+				class="btn-cancel button" href="notice.jsp">취소</a>
+		</p>
+
+		<%-- 
+		<input type="hidden" name="${ _csrf.parameterName }" value="${ _csrf.token }"> 
+		--%>
+	</form>
+</div>
+
+
+--mapper.java
+// 공지사항 보기
+	public NoticeVO getNotice(String seq) throws ClassNotFoundException, SQLException;
+
+	// 공지사항 추가하는 메서드
+	public int insert(NoticeVO notice) throws ClassNotFoundException, SQLException; 
+
+<!-- public NoticeVO getNotice(String seq) throws ClassNotFoundException, 
+		SQLException; -->
+	<select id="getNotice" resultType="org.doit.ik.domain.NoticeVO">
+		SELECT *
+		FROM NOTICES
+		WHERE SEQ= #{seq}
+	</select>
+
+
+
+
+-- controller
+// 2. NoticeVO notice 커맨드 객체(command object)
+	@PostMapping(value = "/noticeReg.htm")
+	public String noticeReg(NoticeVO notice, HttpServletRequest request)throws Exception {
+		CommonsMultipartFile multipartFile = notice.getFile();
+		String uploadRealPath = null;
+		if (!multipartFile.isEmpty()) {
+			uploadRealPath = request.getServletContext().getRealPath("/customer/upload");
+			System.out.println("> uploadRealPath : "+ uploadRealPath);
+			
+			String originalFilename = multipartFile.getOriginalFilename();
+			
+			String filesystemName = getFileNameCheck(uploadRealPath, originalFilename);
+			File dest = new File(uploadRealPath, filesystemName);
+			multipartFile.transferTo(dest);
+			
+			notice.setFilesrc(filesystemName);
+		}
+		notice.setWriter("yeon");
+		int rowCount = this.noticeDao.insert(notice);
+		if (rowCount ==1) {  // 글쓰기 성공
+			return "redirect:notice.htm";  // 스프링 [리다이렉트] redirect: 접두사 사용 / 포워딩
+		}else {  // 글쓰기 실패
+			return "noticeReg.jsp?error";
+		}
+		/*
+		int rowCount = 1;
+		try {
+			this.memberShipService.insertAndPointUpOfMember(notice, "yeon");
+			return "redirect:notice.htm"; 
+		} catch (Exception e) {
+			return "noticeReg.jsp?error";
+		}
+		*/
+		
+	}
+	
+	// <input class="btn-save button" type="submit" value="저장" />
+	// 1.
+	/*
+	@PostMapping(value = "/noticeReg.htm")
+	public String noticeReg(@RequestParam("title") String title , @RequestParam("content") String content)throws Exception {
+		return "noticeReg.jsp";
+	}
+	*/
+	// <a class="btn-write button" href="noticeReg.htm">글쓰기</a>
+	@GetMapping(value = "/noticeReg.htm")
+	public String noticeReg(HttpSession session)throws Exception {
+		return "customer.noticeReg";
+	}
+	
+	// 2.
+	@GetMapping("/notice.htm")
+	public String notices(
+			Model model
+		  , @RequestParam(value = "page", defaultValue = "1") int page
+		  , @RequestParam(value = "field", defaultValue = "title") String filed
+		  , @RequestParam(value = "query", defaultValue = "") String query
+		  ) throws Exception {
+		
+		List<NoticeVO> list = this.noticeDao.getNotices(page, filed, query);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("message", "hello world!");
+	
+		return "customer.notice";
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

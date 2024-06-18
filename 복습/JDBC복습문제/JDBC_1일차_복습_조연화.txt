@@ -1,0 +1,76 @@
+	public static void main(String[] args) {
+//		[문제]
+//
+//				 - emp,dept,salgrade 테이블을 사용해서
+//				   ename으로 검색하여 
+//				   ArrayList<> 에 저장하여 
+//				   dispEmpList(ArrayList<> list) 메서드를 선언하여 출력하는 코딩을 하세요.
+//				 - empno, dname, ename, hiredate, pay, salgrade 컬럼 출력.   
+//				 - 검색결과가 없는 경우 
+//				    "사원이 존재하지 않습니다." 라고 출력
+		
+		String className = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "scott";
+		String password = "tiger";
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		int empno;
+		String dname;
+		String ename;
+		Date hiredate;
+		int pay;
+		String salgrade;
+		
+		ArrayList<dispEmpList> list = new ArrayList<E>();
+		
+		try {
+//			1. class.forname() jdbc 드라이버 로딩
+			Class.forName(className);
+		
+//			2. connection 객체생성
+			conn = DriverManager.getConnection(url);
+			
+//			3. 필요한 작업
+			String sql = "Select empno, dname, ename, hiredate, sal+NVL(comm,0) pay , grade salgrade From emp, dept, salgrade 
+					   	where emp.deptno = dept.deptno and emp.sal >= salgrade.losal and emp.sal <= salgrade.hisal";
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while (rs.hasNext()) {
+				empno = rs.getInt("empno");
+				dname = rs.getString("dname");
+				ename = rs.getString("ename");
+				hiredate = rs.getDate("hiredate");
+				pay = rs.getInt("pay");
+				salgrade = rs.getString("salgrade");
+				
+				dispEmpList list = new dispEmpList();
+				list.add(list);
+				
+			}
+			
+//			4. close() 닫기
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		System.out.println(" end " );
+		
+				       
+	}//main
+
+}// class
+       

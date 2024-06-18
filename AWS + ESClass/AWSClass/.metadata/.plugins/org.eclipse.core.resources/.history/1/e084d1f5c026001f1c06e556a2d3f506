@@ -1,0 +1,5 @@
+package aws.mysql.sslecture;
+
+public class DBConn {
+
+}

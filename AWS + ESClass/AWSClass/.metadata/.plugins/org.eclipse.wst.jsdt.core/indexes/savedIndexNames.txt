@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\E\Sist\Class\Workspace\AWSClass\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2111958051.index
+2414985129.index
+24975625.index
+2371143006.index
+184283240.index
+611449570.index
+1216591437.index

@@ -1,0 +1,283 @@
+Î¨∏Ïùò?ì∞Í∏?
+
+Íµ¨Îß§Í¥??†®Î¨∏Ïùò, ?ùºÎ∞òÏÉÅ?ã¥Î¨∏Ïùò, Í∏∞Ì?Î¨∏Ïùò, ?Ñ±Î™?, ?ïÑ?ù¥?îî, ?ù¥Î©îÏùº, ?†úÎ™?,?Ç¥?ö©,?Ç¨ÏßÑÏ≤®Î∂?
+
+Î¨∏Ïùò?Ç¥?ó≠
+?ÉÅ?ã¥Íµ¨Î∂Ñ / ?ÉÅ?ã¥?†úÎ™? / ?ûë?Ñ±?ùº / ?ãµÎ≥??ú†Î¨? / ?Ç≠?†úÎ≤ÑÌäº
+-> ?Å¥Î¶??ãú ?Ç¨Ïß? / ?†úÎ™? / ?Ç¥?ö© Ï∂úÎ†• [ajax]
+
+
+	@Autowired
+	private NamedParameterJdbcTemplate npJdbcTemplate;
+	
+	// @Autowired
+	// private DataSourceTransactionManager transactionManager;
+	
+	// @Autowired
+	// private TransactionTemplate transactionTemplate;
+	
+	// Í≥µÏ??Ç¨?ï≠?ùò Í∞??àò Î∞òÌôò?ïò?äî Î©îÏÑú?ìú
+	@Override
+	public int getCount(String field, String query) throws ClassNotFoundException, SQLException
+	{
+		String sql = " SELECT COUNT(*) CNT "
+				   + " FROM inquiry "
+				   + " WHERE "+field+" LIKE :query";
+		
+		MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+		parameterSource.addValue("query", query);
+		
+		return this.npJdbcTemplate.queryForObject(sql, parameterSource, Integer.class);
+		// return this.jdbcTemplate.queryForObject(sql, Integer.class,"%"+query+"%");
+	}
+	
+	// Í≥µÏ??Ç¨?ï≠?ùò Î™©Î°ù?ùÑ List Ïª¨Î†â?Öò?úºÎ°? Î∞òÌôò?ïò?äî Î©îÏÑú?ìú
+	@Override
+	public List<InquiryVO> getInquirys(
+			int page           // ?òÑ?û¨ ?éò?ù¥Ïß? Î≤àÌò∏
+			, String field     // Í≤??ÉâÏ°∞Í±¥
+			, String query     // Í≤??Éâ?ñ¥
+			) throws ClassNotFoundException, SQLException
+	{					
+		
+		int srow = 1 + (page-1)*15; // 1, 16, 31, 46, 61, ... an = a1 + (n-1)*d
+		int erow = 15 + (page-1)*15; //15, 30, 45, 60, 75, ...
+		
+		String sql = " SELECT * "
+	               + "  FROM ( "
+	               + "                 SELECT ROWNUM NUM, N.* "
+	               + "                 FROM ("
+	               + "                          SELECT * "
+	               + "                          FROM inquiry "
+	               + "                          WHERE "+field+" LIKE :query "
+	                     + "                   ORDER BY REGDATE DESC"
+	                     + "                ) N"
+	                     + "  ) "
+	                 +  " WHERE NUM BETWEEN :srow AND :erow ";
+		
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		paramMap.put("query", "%"+query+"%");
+		paramMap.put("srow", srow);
+		paramMap.put("erow", erow);
+		
+		return this.npJdbcTemplate.query(sql, paramMap, new BeanPropertyRowMapper<InquiryVO>(InquiryVO.class));
+		// return this.jdbcTemplate.query(sql, new Object [] {"%"+query+"%",srow,erow} ,new BeanPropertyRowMapper<NoticeVO>(NoticeVO.class) );
+	}
+	
+	// Í≥µÏ??Ç¨?ï≠ ?Ç≠?†ú?ïò?äî Î©îÏÑú?ìú
+	@Override
+	public int delete(String inquiryId) throws ClassNotFoundException, SQLException
+	{
+		String sql = "DELETE inquiry "
+				  + " WHERE inquiry_id=:inquiryId";
+		
+		MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+		parameterSource.addValue("inquiryId", inquiryId);
+		
+		return this.npJdbcTemplate.update(sql, parameterSource);
+	}
+	
+	// Í≥µÏ??Ç¨?ï≠ ?àò?†ï?ïò?äî Î©îÏÑú?ìú*****
+	@Override
+	public int update(InquiryVO inquiry) throws ClassNotFoundException, SQLException{
+		
+		String sql = "UPDATE inquiry "
+				  + " SET inquiry_title=:inquiryTitle, inquiry_content=:inquiryContent, filesrc=:filesrc "
+				  + " WHERE inquiry_id=:inquiryId";
+		
+		SqlParameterSource parameterSource = new BeanPropertySqlParameterSource(inquiry);
+		return this.npJdbcTemplate.update(sql, parameterSource);
+		
+		/*
+		MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+		parameterSource.addValue("title", notice.getTitle());
+		parameterSource.addValue("content", notice.getContent());
+		parameterSource.addValue("filesrc", notice.getFilesrc());
+		parameterSource.addValue("seq", notice.getSeq());
+		
+		return this.npJdbcTemplate.update(sql, parameterSource);
+	    */
+	}
+	
+	// Í≥µÏ??Ç¨?ï≠ Î≥¥Í∏∞
+	@Override
+	public InquiryVO getInquiry(String inquiryId) throws ClassNotFoundException, SQLException
+	{
+		String sql = "SELECT * "
+				  + " FROM NOTICES "
+				  + " WHERE inquiry_id=:inquiryId";
+		
+		MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+	    parameterSource.addValue("inquiryId", inquiryId );
+	      
+	      return this.npJdbcTemplate.queryForObject(sql
+	            , parameterSource
+	            , new BeanPropertyRowMapper<InquiryVO>(InquiryVO.class));
+	}
+
+	// Í≥µÏ??Ç¨?ï≠ Ï∂îÍ??ïò?äî Î©îÏÑú?ìú
+	@Override
+	@Transactional
+	public String insert(InquiryVO inquiry) throws ClassNotFoundException, SQLException {
+		
+		  // A. Í≥µÏ??Ç¨?ï≠ ?ì∞Í∏?
+	      String sql = "INSERT INTO inquiry "
+	        + " (inquiry_id, inquiry_title , inquiry_content, inquiry_date, buy_inquiry , etc_inquiry , general_inquiry_id , member_id , filesrc ) "
+	        + " VALUES( (SELECT NVL(MAX(TO_NUMBER(inquiry_id)),0)+1 FROM inquiry), :inquiryTitle, :inquiryContent, SYSDATE, :buyInquiry, :etcInquiry, :generalInquiryId, :memberId,  :filesrc)";
+	      // A
+	      SqlParameterSource parameterSource= new BeanPropertySqlParameterSource(inquiry);
+	    
+	      return this.npJdbcTemplate.insert(sql, parameterSource);
+
+			/*
+			 * // B. ?ûë?Ñ±?ûê ?è¨?ù∏?ä∏ 1Ï¶ùÍ? String sql2 = " UPDATE member " +
+			 * " SET point  = point + 1 " + " WHERE id = :id "; // B MapSqlParameterSource
+			 * paramSource = new MapSqlParameterSource(); paramSource.addValue("id",
+			 * "yeon"); int updateCount = npJdbcTemplate.update(sql2, paramSource);
+			 */
+	      
+	}
+
+
+
+
+--TABLE MEMBER ?çîÎØ∏Îç∞?ù¥?Ñ∞
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('test@naver.com','1234','?çîÎØ∏ID',0,null,null);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('rladudwls@naver.com','1234','Íπ??òÅÏß?',3540,2,4);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('rlawlstjd@naver.com','1234','Íπ?ÏßÑÏÑ±',6871,1,3);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('dbwls@naver.com','1234','?ú†Ïß?',100000,3,4);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('whdusghk@naver.com','1234','Ï°∞Ïó∞?ôî',6512,2,1);
+
+--Î¨∏Ïùò?Ç¥?ó≠ ?çîÎØ∏Îç∞?ù¥?Ñ∞
+insert into senti.INQUIRY(INQUIRY_ID, INQUIRY_TITLE, INQUIRY_CONTENT,INQUIRY_DATE, FILESRC, BUY_INQUIRY, GENERAL_INQUIRY_ID, ETC_INQUIRY, MEMBER_ID) 
+values ('1' , 'Ïø†Ìè∞', 'Ïø†Ìè∞Ï£ºÏÑ∏?öî', sysdate, 'KakaoTalk_20240429_105902282.png', null, '6', null, 'whdusghk@naver.com' );
+
+SELECT * FROM INQUIRY;
+
+SELECT * FROM BUY_INQUIRY;
+SELECT * FROM GENERAL_INQUIRY;
+SELECT * FROM ETC_INQUIRY;
+
+select * from inquiry i join member m on i.member_id = m.member_id;
+
+SELECT * FROM member;
+
+Î¨∏Ïùò?ì∞Í∏?
+Íµ¨Îß§Í¥??†®Î¨∏Ïùò, ?ùºÎ∞òÏÉÅ?ã¥Î¨∏Ïùò, Í∏∞Ì?Î¨∏Ïùò, ?Ç†Ïß?, ?ïÑ?ù¥?îî, ?Ñ±Î™?, ?†úÎ™?,?Ç¥?ö©,?Ç¨ÏßÑÏ≤®Î∂?
+select buy_inquiry, general_inquiry, etc_inquiry, inquiry_date, m.MEMBER_ID, member_name , inquiry_title, INQUIRY_CONTENT , filesrc
+from inquiry i join member m on m.member_id = i.member_id;
+
+INSERT INTO INQUIRY( buy_inquiry, general_inquiry, etc_inquiry, inquiry_date, member_id, inquiry_title, inquiry_content , filesrc )
+VALUES ( NVL(buy_inquiry,0), NVL(general_inquiry,0), NVL(etc_inquiry,0), SYSDATE, member_id, inquiry_title, inquiry_content , filesrc );
+
+Î¨∏Ïùò?Ç¥?ó≠
+?ÉÅ?ã¥Íµ¨Î∂Ñ / ?ÉÅ?ã¥?†úÎ™? / ?ûë?Ñ±?ùº / ?ãµÎ≥??ú†Î¨? / ?Ç≠?†úÎ≤ÑÌäº
+select b.buy_inquiry_NAME, g.general_inquiry_NAME, e.etc_inquiry_NAME, m.member_name, inquiry_title , inquiry_date
+from inquiry i join member m on i.member_id = m.member_id
+                join buy_inquiry b on i.buy_inquiry = b.buy_inquiry
+                join general_inquiry g on i.general_inquiry = g.general_inquiry
+                join etc_inquiry e on i.etc_inquiry = e.etc_inquiry
+                ; 
+                
+select g.general_inquiry_name, m.member_name, inquiry_title , inquiry_date
+from inquiry i join member m on i.member_id = m.member_id
+                join general_inquiry g on i.general_inquiry = g.general_inquiry
+                ; 
+                                                     
+
+alter table inquiry rename column general_inquiry_id to general_inquiry;
+--TABLE MEMBER ?çîÎπÑÎç∞?ù¥?Ñ∞
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('test@naver.com','1234','?çîÎØ∏ID',0,null,null);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('rladudwls@naver.com','1234','Íπ??òÅÏß?',3540,2,4);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('rlawlstjd@naver.com','1234','Íπ?ÏßÑÏÑ±',6871,1,3);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('dbwls@naver.com','1234','?ú†Ïß?',100000,3,4);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('whdusghk@naver.com','1234','Ï°∞Ïó∞?ôî',6512,2,1);
+
+--Î¨∏Ïùò?Ç¨?ï≠ ?ì∞Í∏? ?çîÎØ?
+ (inquiry_id, inquiry_title, inquiry_content,inquiry_date, filesrc, buy_inquiry, general_inquiry_id, etc_inquiry, member_id)
+
+insert into senti.INQUIRY(INQUIRY_ID, INQUIRY_TITLE, INQUIRY_CONTENT,INQUIRY_DATE, FILESRC, BUY_INQUIRY, GENERAL_INQUIRY, ETC_INQUIRY, MEMBER_ID) 
+values (1 , 'Ïø†Ìè∞', 'Ïø†Ìè∞Ï£ºÏÑ∏?öî', sysdate, 'KakaoTalk_20240429_105902282.png', 0, '6', 0, 'whdusghk@naver.com' );
+
+DELETE FROM INQUIRY WHERE INQUIRY_ID = 1 ;
+
+insert into BUY_INQUIRY(BUY_INQUIRY, BUY_INQUIRY_NAME) VALUES( 0, '?ï¥?ãπ?Ç¨?ï≠?óÜ?ùå');
+insert into GENERAL_INQUIRY(GENERAL_INQUIRY, GENERAL_INQUIRY_NAME) VALUES( 0, '?ï¥?ãπ?Ç¨?ï≠?óÜ?ùå');
+insert into ETC_INQUIRY(ETC_INQUIRY, ETC_INQUIRY_NAME) VALUES( 0, '?ï¥?ãπ?Ç¨?ï≠?óÜ?ùå');
+
+
+
+SELECT * FROM INQUIRY;
+
+SELECT * FROM BUY_INQUIRY;
+SELECT * FROM GENERAL_INQUIRY;
+SELECT * FROM ETC_INQUIRY;
+
+select * from inquiry i join member m on i.member_id = m.member_id;
+
+SELECT * FROM member;
+
+Î¨∏Ïùò?ì∞Í∏?
+Íµ¨Îß§Í¥??†®Î¨∏Ïùò, ?ùºÎ∞òÏÉÅ?ã¥Î¨∏Ïùò, Í∏∞Ì?Î¨∏Ïùò, ?Ç†Ïß?, ?ïÑ?ù¥?îî, ?Ñ±Î™?, ?†úÎ™?,?Ç¥?ö©,?Ç¨ÏßÑÏ≤®Î∂?
+select buy_inquiry, general_inquiry, etc_inquiry, inquiry_date, m.MEMBER_ID, member_name , inquiry_title, INQUIRY_CONTENT , filesrc
+from inquiry i join member m on m.member_id = i.member_id;
+
+INSERT INTO INQUIRY( buy_inquiry, general_inquiry, etc_inquiry, inquiry_date, member_id, inquiry_title, inquiry_content , filesrc )
+VALUES ( NVL(buy_inquiry,0), NVL(general_inquiry,0), NVL(etc_inquiry,0), SYSDATE, member_id, inquiry_title, inquiry_content , filesrc );
+
+Î¨∏Ïùò?Ç¥?ó≠
+?ÉÅ?ã¥Íµ¨Î∂Ñ / ?ÉÅ?ã¥?†úÎ™? / ?ûë?Ñ±?ùº / ?ãµÎ≥??ú†Î¨? / ?Ç≠?†úÎ≤ÑÌäº
+select b.buy_inquiry_NAME, g.general_inquiry_NAME, e.etc_inquiry_NAME, m.member_name, inquiry_title , inquiry_date
+from inquiry i join member m on i.member_id = m.member_id
+                join buy_inquiry b on i.buy_inquiry = b.buy_inquiry
+                join general_inquiry g on i.general_inquiry = g.general_inquiry
+                join etc_inquiry e on i.etc_inquiry = e.etc_inquiry
+                ; 
+                
+select g.general_inquiry_name, m.member_name, inquiry_title , inquiry_date
+from inquiry i join member m on i.member_id = m.member_id
+                join general_inquiry g on i.general_inquiry = g.general_inquiry
+                ; 
+                                                     
+
+alter table inquiry rename column general_inquiry_id to general_inquiry;
+--TABLE MEMBER ?çîÎπÑÎç∞?ù¥?Ñ∞
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('test@naver.com','1234','?çîÎØ∏ID',0,null,null);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('rladudwls@naver.com','1234','Íπ??òÅÏß?',3540,2,4);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('rlawlstjd@naver.com','1234','Íπ?ÏßÑÏÑ±',6871,1,3);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('dbwls@naver.com','1234','?ú†Ïß?',100000,3,4);
+Insert into SENTI.MEMBER (MEMBER_ID,MEMBER_PWD,MEMBER_NAME,MILEAGE,COUPON_ID,GRADE_ID) values ('whdusghk@naver.com','1234','Ï°∞Ïó∞?ôî',6512,2,1);
+
+--Î¨∏Ïùò?Ç¨?ï≠ ?ì∞Í∏? ?çîÎØ?
+ (inquiry_id, inquiry_title, inquiry_content,inquiry_date, filesrc, buy_inquiry, general_inquiry_id, etc_inquiry, member_id)
+
+insert into senti.INQUIRY(INQUIRY_ID, INQUIRY_TITLE, INQUIRY_CONTENT,INQUIRY_DATE, FILESRC, BUY_INQUIRY, GENERAL_INQUIRY, ETC_INQUIRY, MEMBER_ID) 
+values (1 , 'Ïø†Ìè∞', 'Ïø†Ìè∞Ï£ºÏÑ∏?öî', sysdate, 'KakaoTalk_20240429_105902282.png', 0, '6', 0, 'yeon@naver.com' );
+
+DELETE FROM INQUIRY WHERE INQUIRY_ID = 1 ;
+
+insert into BUY_INQUIRY(BUY_INQUIRY, BUY_INQUIRY_NAME) VALUES( 0, '?ï¥?ãπ?Ç¨?ï≠?óÜ?ùå');
+insert into GENERAL_INQUIRY(GENERAL_INQUIRY, GENERAL_INQUIRY_NAME) VALUES( 0, '?ï¥?ãπ?Ç¨?ï≠?óÜ?ùå');
+insert into ETC_INQUIRY(ETC_INQUIRY, ETC_INQUIRY_NAME) VALUES( 0, '?ï¥?ãπ?Ç¨?ï≠?óÜ?ùå');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

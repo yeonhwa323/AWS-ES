@@ -1,0 +1,335 @@
+--티웨어
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'펠로우 전기 드립포트 600ml',	230000,	'상품번호5741392'	,45,	10,	25,	4,	10,	43,	418	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/next-product/2022/06/13/a65181fd9fcb4dc492bb395dde341695_20220613090853.jpg?width=700', 
+'https://img.29cm.co.kr/next-product/2020/03/19/61ae83f7cfd24f85a7f0c715b164062c_20200319131617.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'펠로우 전기 드립포트 900ml',	260000,	'상품번호6294851'	,45,	17,	25,	4,	10,	43,	418	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/next-product/2022/06/13/a65181fd9fcb4dc492bb395dde341695_20220613090853.jpg?width=600', 
+'https://img.29cm.co.kr/next-product/2020/03/19/61ae83f7cfd24f85a7f0c715b164062c_20200319131617.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'펠로우 전기 드립포트 900ml',	260000,	'상품번호3189256'	,45,	32,	25,	4,	10,	43,	418	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/next-product/2022/06/13/12c1dc9159e54fba85a5469e38e54a88_20220613090930.jpg?width=600', 
+'https://img.29cm.co.kr/next-product/2020/03/19/61ae83f7cfd24f85a7f0c715b164062c_20200319131617.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'펠로우 전기 드립포트 600ml',	230000,	'상품번호4738512'	,45,	26,	25,	4,	10,	43,	418	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/next-product/2020/03/05/8beae1b700664c7aa807b11cbd6168df_20200305141812.jpg?width=600', 
+'https://img.29cm.co.kr/next-product/2020/03/19/61ae83f7cfd24f85a7f0c715b164062c_20200319131617.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'티타늄 드리퍼',	25000,	'상품번호8273641'	,45,	0,	25,	4,	10,	43,	418	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/next-product/2022/06/13/b5bdcf5bafda4a228831eab58ee686d8_20220613090910.jpg?width=600', 
+'https://img.29cm.co.kr/next-product/2020/03/19/61ae83f7cfd24f85a7f0c715b164062c_20200319131617.jpg', seq_pd_id.currval, 'test', 'test' );
+
+--티코스터
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'해피니스 컵선물세트',	26460,	'상품번호4738512'	,45,	12,	25,	4,	10,	43,	419	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/item/202401/11eeb3d0a4d44c88837775db10c349d2.png?width=600', 
+'https://img.29cm.co.kr/item/202401/11eeb3d0c51fd0a0b238f1592a7412d8.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'clam coaster',	6500,	'상품번호4519286'	,45,	0,	25,	4,	10,	43,	419	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/item/202308/11ee400abda287d38a69cb4221deb273.jpg?width=600', 
+'https://img.29cm.co.kr/item/202401/11eeb3d0c51fd0a0b238f1592a7412d8.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'Tea coster_vol.6',	9720,	'상품번호6294851'	,45,	19,	25,	4,	10,	43,	419	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/item/202401/11eeb47a6abd61c8b238b39fc4fa73f7.jpg?width=600', 
+'https://img.29cm.co.kr/item/202401/11eeb3d0c51fd0a0b238f1592a7412d8.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'Tea coster_vol.7',	7280,	'상품번호9168273'	,45,	19,	25,	4,	10,	43,	419	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/item/202402/11eed6dbc3af95ca9a767970cf1bfcda.jpg?width=600', 
+'https://img.29cm.co.kr/item/202401/11eeb3d0c51fd0a0b238f1592a7412d8.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'Coaster(9 colors)',	9500,	'상품번호4519286'	,45,	0,	25,	4,	10,	43,	419	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/item/202309/11ee5f64f2f2549f83bcbd63390d2464.jpg?width=600', 
+'https://img.29cm.co.kr/item/202401/11eeb3d0c51fd0a0b238f1592a7412d8.jpg', seq_pd_id.currval, 'test', 'test' );
+
+--테이블매트
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'오브 실리콘 매트',	7075,	'상품번호4738512'	,45,	41,	25,	4,	10,	43,	420	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/next-product/2020/06/01/2b5a2f2182d94bff807c9280ce35f23f_20200601010036.jpg?width=600', 
+'https://img.29cm.co.kr/next-product/2022/11/20/7b2bc36cb9be4a4f9360def94991e710_20221120230141.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'린넨 키친 크로스 69종',	24900,	'상품번호5492168'	,45,	15,	25,	4,	10,	43,	420	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/next-product/2021/03/29/64b06f329c714d6abc1ca64840574050_20210329130116.jpg?width=600', 
+'https://img.29cm.co.kr/next-product/2022/11/20/7b2bc36cb9be4a4f9360def94991e710_20221120230141.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'Fabric Mat',	9000,	'상품번호4762819'	,45,	0,	25,	4,	10,	43,	420	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/item/202403/11eee0400c28996c9a7665bc55578151.png?width=600', 
+'https://img.29cm.co.kr/next-product/2022/11/20/7b2bc36cb9be4a4f9360def94991e710_20221120230141.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'크레용 손수건키친크론스',	5500,	'상품번호6914523'	,45,	0,	25,	4,	10,	43,	420	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/item/202403/11eee010e30e7cc491a549053f6e9305.jpg?width=600', 
+'https://img.29cm.co.kr/next-product/2022/11/20/7b2bc36cb9be4a4f9360def94991e710_20221120230141.jpg', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'Fabric kitchen cloth',	13000,	'상품번호2378946'	,45,	0,	25,	4,	10,	43,	420	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/item/202405/11ef0cd9d4c80739b9bb25a82ee9fe0f.jpg?width=600', 
+'https://img.29cm.co.kr/next-product/2022/11/20/7b2bc36cb9be4a4f9360def94991e710_20221120230141.jpg', seq_pd_id.currval, 'test', 'test' );
+
+--테이블커버
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'한스갤러리 린넨 레이스',	14800,	'상품번호5184692'	,45,	35,	25,	4,	10,	43,	421	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/next-product/2020/01/20/10c8f2f667d94898bd691d7842890d7e_20200120111951.jpg?width=600', 
+'https://img.29cm.co.kr/next-product/2020/02/20/90e70f6a55f74ef69043a53ea804a1c0_20200220161233.jpg?width=1000', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'블루체크 테이블커버',	22410,	'상품번호8963471'	,45,	10,	25,	4,	10,	43,	421	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/item/202401/11eeb4dd345e2056b238e1a6083c6a4f.jpg?width=600', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'아웃라인 라이트 블루',	148000,	'상품번호8236479'	,45,	0,	25,	4,	10,	43,	421	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/next-product/2024/01/04/0d3187334c33475e994fbb4149f48059_20240104103508.jpg?width=600', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'무지 화이트 프릴 테이블보',	14310,	'상품번호6914523'	,45,	75,	25,	4,	10,	43,	421	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/item/202401/11eeb5d0fa32c3e191eb3f588856d81b.jpg?width=600', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'아멜리아 린넨테이블보',	29800,	'상품번호4762819'	,45,	0,	25,	4,	10,	43,	421	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'https://img.29cm.co.kr/next-product/2022/07/06/cdb972bc71004da3a55c918fc91e09ce_20220706073523.jpeg?width=600', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--테이블 소품
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'텀블러 파우치백',	12800,	'상품번호8963471'	,45,	41,	25,	4,	10,	43,	422	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'윙크 타코 젓가락받침',	11534,	'상품번호6318472'	,45,	12,	25,	4,	10,	43,	422	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'강아지 가위 수저 꽂이',	20900,	'상품번호8963471'	,45,	25,	25,	4,	10,	43,	422	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'스푼 홀더',	17100,	'상품번호2378946'	,45,	10,	25,	4,	10,	43,	422	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'멍이 수저받침',	10900,	'상품번호8236479'	,45,	0,	25,	4,	10,	43,	422	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--찬기
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'플라워 기프트 세트',	63000,	'상품번호9472635'	,45,	0,	25,	4,	10,	43,	423	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'소르베 찬기',	23220,	'상품번호3189256'	,45,	36,	25,	4,	10,	43,	423	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'유광 플라워 그로스',	12000,	'상품번호5492168'	,45,	0,	25,	4,	10,	43,	423	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'오발 찬기',	12000,	'상품번호6142987'	,45,	0,	25,	4,	10,	43,	423	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'일본 가정식 반찬기',	5700,	'상품번호2378946'	,45,	2,	25,	4,	10,	43,	423	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--종지
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'다이너 소스볼',	28600,	'상품번호8963471'	,45,	12,	25,	4,	10,	43,	424	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'미니플레이트 4종',	28464,	'상품번호8963471'	,45,	18,	25,	4,	10,	43,	424	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'데이지 보울 3종',	16544,	'상품번호4762819'	,45,	35,	25,	4,	10,	43,	424	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'모리스 오가닉 종지',	10000,	'상품번호2378946'	,45,	17,	25,	4,	10,	43,	424	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'데이지 보울 단품',	5808,	'상품번호3189256'	,45,	30,	25,	4,	10,	43,	424	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--공기,국기
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'라인 라이스 보울',	20700,	'상품번호1958723'	,45,	10,	25,	4,	10,	43,	425	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'라인 플레이트',	20700,	'상품번호6392754'	,45,	10,	25,	4,	10,	43,	425	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'알라바스터 보울',	38570,	'상품번호4721983'	,45,	34,	25,	4,	10,	43,	425	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'카모메키친 공기',	7000,	'상품번호5279143'	,45,	50,	25,	4,	10,	43,	425	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'힌 로우 볼 스톤',	40000,	'상품번호4721983'	,45,	0,	25,	4,	10,	43,	425	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--면기
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'딥 오발 볼 타원형',	28800,	'상품번호9728631'	,45,	0,	25,	4,	10,	43,	426	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'산도 샐러드볼',	42000,	'상품번호2689451'	,45,	0,	25,	4,	10,	43,	426	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'면기',	34000,	'상품번호7941836'	,45,	0,	25,	4,	10,	43,	426	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'레고트 면기 2p',	85500,	'상품번호5748123'	,45,	5,	25,	4,	10,	43,	426	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'고운달 면기',	45000,	'상품번호2689451'	,45,	0,	25,	4,	10,	43,	426	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--숟가락
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'커트러리 한식기 1인용',	19000,	'상품번호3189256'	,45,	24,	25,	4,	10,	43,	427	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'마카롱 한식수저세튼ㅇ',	12000,	'상품번호9168273'	,45,	0,	25,	4,	10,	43,	427	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'컬러무드 숟가락젓가락 세트',	24900,	'상품번호2689451'	,45,	48,	25,	4,	10,	43,	427	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'사브르 2인 믹스 한식수저세트',	55000,	'상품번호9728631'	,45,	44,	25,	4,	10,	43,	427	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'카모메카진 스텐 숟가락젓가락세트',	19800,	'상품번호6294851'	,45,	51,	25,	4,	10,	43,	427	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--식기세트
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'다이너 소스볼 기프트',	28600,	'상품번호7529614'	,45,	12,	25,	4,	10,	43,	428	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'마블 시리얼세트',	27280,	'상품번호3254968'	,45,	12,	25,	4,	10,	43,	428	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'에딩 고블렛 세트',	33440,	'상품번호7941836'	,45,	20,	25,	4,	10,	43,	428	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'엘로우라인 점박이 플레이트 3종',	7000,	'상품번호8362745'	,45,	0,	25,	4,	10,	43,	428	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'보울+서클 플레이트',	47700,	'상품번호5741392'	,45,	10,	25,	4,	10,	43,	428	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--플레이트
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'당신의 음식을 노리는 고양이들',	28400,	'상품번호3189256'	,45,	0,	25,	4,	10,	43,	429	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'트윙클 하트 디쉬',	33000,	'상품번호5741392'	,45,	0,	25,	4,	10,	43,	429	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'블랑 접시 4p세트',	39600,	'상품번호8273641'	,45,	32,	25,	4,	10,	43,	429	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'고양이 체크인',	32000,	'상품번호3189256'	,45,	0,	25,	4,	10,	43,	429	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'미니플레이트 set',	39600,	'상품번호5821346'	,45,	17,	25,	4,	10,	43,	429	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--머그컵
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'토마토 머그',	14970,	'상품번호5821346'	,45,	12,	25,	4,	10,	43,	430	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'클래식 진공 머그',	39600,	'상품번호5821346'	,45,	12,	25,	4,	10,	43,	430	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'윌레스와 그로밋 머그컵',	24552,	'상품번호9728631'	,45,	45,	25,	4,	10,	43,	430	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'해피니스 컵 선물세트',	24640,	'상품번호5813976'	,45,	12,	25,	4,	10,	43,	430	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'애니멀 팜 내열유리잔',	24200,	'상품번호2689451'	,45,	33,	25,	4,	10,	43,	430	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--유리컵
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'시손느 글라스 선물세트',	42672,	'상품번호6392754'	,45,	16,	25,	4,	10,	43,	431	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'디즈니정품 빈티지 유리컵',	33890,	'상품번호8451396'	,45,	36,	25,	4,	10,	43,	431	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'해피니스 컵 선물세트',	24640,	'상품번호4519286'	,45,	12,	25,	4,	10,	43,	431	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'테비네리 유리 텀블러',	13630,	'상품번호5821346'	,45,	12,	25,	4,	10,	43,	431	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'하이볼잔 스탠다드',	34320,	'상품번호6958172'	,45,	16,	25,	4,	10,	43,	431	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--텀블러
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'플로우스테이트',	43120,	'상품번호8963471'	,45,	12,	25,	4,	10,	43,	432	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'플로우스 스테이트 텀블러',43120,	'상품번호1857362'	,45,	12,	25,	4,	10,	43,	432	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'H2) 스테이트 텀블러',	45672,	'상품번호4762819'	,45,	12,	25,	4,	10,	43,	432	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'아이스플로우 텀블러',	34200,	'상품번호6914523'	,45,	12,	25,	4,	10,	43,	432	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'레고트 투웨이 루프',	20800,	'상품번호2478591'	,45,	28,	25,	4,	10,	43,	432	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+--커피잔
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'맥파이앤타이거',	24200,	'상품번호6914523'	,45,	12,	25,	4,	10,	43,	433	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'오엠지세라믹 미니컵세트',	37050,	'상품번호5741392'	,45,	5,	25,	4,	10,	43,	433	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'라인머그&스프 플레이트 세트',	60300,	'상품번호1857362'	,45,	10,	25,	4,	10,	43,	433	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'킨토 컵 앤 소서',	38000,	'상품번호8963471'	,45,	0,	25,	4,	10,	43,	433	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );
+
+INSERT INTO PRODUCT VALUES(seq_pd_id.nextval,	'2인 홈카페세트',	57684,	'상품번호4762819'	,45,	17,	25,	4,	10,	43,	433	);
+INSERT INTO PRODUCT_IMAGE VALUES ( seq_pd_image_id.nextval, 'PD_IMAGE_URL', 
+'PD_INFO_IMAGE_URL', seq_pd_id.currval, 'test', 'test' );

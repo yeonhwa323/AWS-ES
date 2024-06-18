@@ -1,0 +1,54 @@
+240501 프로젝트 시작~
+https://shop.29cm.co.kr
+/best-items?category_large_code=268100100     여성베스트
+/best-items?category_large_code=269100100
+
+
+kitchen>
+-주방생활 메인페이지
+/category/main?category=292100100
+&categoryLargeCode=292100100
+&sort=RECOMMEND
+&defaultSort=RECOMMEND
+&sortOrder=DESC      
+
+-ALL
+/category/list?categoryLargeCode=292100100
+&categoryMediumCode=
+&sort=RECOMMEND
+&defaultSort=RECOMMEND
+&sortOrder=DESC
+&page=1
+
+-NEW	
+/category/list?categoryLargeCode=292100100
+&categoryMediumCode=
+&sort=NEW
+&sortOrder=DESC
+&defaultSort=NEW
+
+-청소,수납
+/category/list?colors=&categoryLargeCode=292100100&categoryMediumCode=292114100&categorySmallCode=&minPrice=&maxPrice=&isFreeShipping=&excludeSoldOut=&isDiscount=&brands=&sort=RECOMMEND&defaultSort=RECOMMEND&sortOrder=DESC	------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
